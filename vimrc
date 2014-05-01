@@ -59,28 +59,6 @@ set diffopt=filler,iwhite
 "set foldmethod=indent
 "et foldnestmax=5
 
-" Set up some of my favorite mappings
-
-" Close file
-map <C-F4> :q
-imap <C-F4> :q
-map <C-S-f4> :q!
-imap <C-S-f4> :q!
-
-
-
-"buffer switching
-map <M-Left> :tabp
-imap <M-Left> :tabp
-map <M-Right> :tabn
-imap <M-Right> :tabn
-
-
-" Ctrl-BS to delete to the beginning of the current word
-map <C-BS> dbx
-imap <C-BS> dbxa
-
-
 
 
 map <C-F12> :TlistToggle<CR>
