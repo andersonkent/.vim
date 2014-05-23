@@ -1,6 +1,7 @@
 @echo off
 
-mkdir %USER_PROFILE%/.vim/bundle
-pushd %USER_PROFILE%/.vim/bundle
+mkdir swapfiles
+mkdir bundle
+cd bundle
 git clone https://github.com/gmarik/Vundle.vim.git Vundle.vim
-popd
+cd ..
