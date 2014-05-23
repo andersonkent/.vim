@@ -19,6 +19,9 @@ Plugin 'sirver/ultisnips'
 Plugin 'gregsexton/VimCalc'
 Plugin 'tmhedberg/matchit'
 Plugin 'scrooloose/syntastic'
+Plugin 'msanders/cocoa.vim'
+Plugin 'eraserhd/vim-ios'
+Plugin 'b4winckler/vim-objc'
 
 " vim-scripts on vim.org
 Plugin 'closetag.vim'
@@ -250,5 +253,18 @@ endfunction
 
 
 let g:syntastic_python_checker_args = "-d R -d C -d W"
-let g:jedi#popup_on_dot = 0
+
+" clang configuration
+let g:clang_complete_auto = 1
+let g:clang_use_library = 1
+let g:clang_periodic_quickfix = 0
+let g:clang_close_preview = 1
+let g:clang_snippets = 1
+let g:clang_snippets_engine = 'ultisnips'
+let g:clang_exec = '/usr/bin/clang'
+
+" syntastic configuration
+let g:syntastic_enable_signs = 1
+let g:syntastic_objc_config_file = '.clang_complete'
+let g:syntastic_objc_checker = 'clang'
 
