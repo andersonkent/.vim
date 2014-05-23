@@ -1,5 +1,36 @@
+" Vundle setup.  This must be first in the file.
+set nocompatible
+filetype off
 
-call pathogen#infect()
+set rtp +=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Bundle loading
+
+" Github-hosted plugins
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-classpath'
+Plugin 'Rip-Rip/clang_complete'
+Plugin 'sirver/ultisnips'
+Plugin 'gregsexton/VimCalc'
+Plugin 'tmhedberg/matchit'
+Plugin 'scrooloose/syntastic'
+
+" vim-scripts on vim.org
+Plugin 'closetag.vim'
+Plugin 'taglist.vim'
+Plugin 'vcscommand.vim'
+Plugin 'calendar.vim'
+
+" Finish Vundle setup
+call vundle#end()
+filetype plugin indent on
+
+" End Vundle setup, now get on with it...
 
 
 set nocp
@@ -28,7 +59,7 @@ set background=dark
 "colorscheme solarized
 "colorscheme kent
 "colorscheme railscasts
-colorscheme moria2
+"colorscheme moria2
 "colorscheme blackboard
 syntax on
 
