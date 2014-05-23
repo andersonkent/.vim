@@ -2,7 +2,4 @@
 .netrwhist
 swapfiles/*
 .DS_Store
-
-
 bundle
-!bundle/Vundle.vim
