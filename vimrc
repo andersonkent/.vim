@@ -22,7 +22,7 @@ set background=dark
 "colorscheme solarized
 "colorscheme kent
 "colorscheme railscasts
-"colorscheme moria2
+colorscheme moria
 "colorscheme blackboard
 syntax on
 
