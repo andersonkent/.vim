@@ -1,40 +1,4 @@
-" Vundle setup.  This must be first in the file.
-set nocompatible
-filetype off
-
-set rtp +=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Bundle loading
-
-" Github-hosted plugins
-Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-classpath'
-Plugin 'Rip-Rip/clang_complete'
-Plugin 'sirver/ultisnips'
-Plugin 'gregsexton/VimCalc'
-Plugin 'tmhedberg/matchit'
-Plugin 'scrooloose/syntastic'
-Plugin 'msanders/cocoa.vim'
-Plugin 'eraserhd/vim-ios'
-Plugin 'b4winckler/vim-objc'
-
-" vim-scripts on vim.org
-Plugin 'closetag.vim'
-Plugin 'taglist.vim'
-Plugin 'vcscommand.vim'
-Plugin 'calendar.vim'
-
-" Finish Vundle setup
-call vundle#end()
-filetype plugin indent on
-
-" End Vundle setup, now get on with it...
-
+execute pathogen#infect()
 
 set nocp
 set nobackup
@@ -51,11 +15,7 @@ filetype plugin indent on
 
 " Put swap files in a separate directory, so we don't 
 " clutter up the filesystem
-if has('win32')
-    set directory=~/vimfiles/swapfiles//
-else
-    set directory=~/.vim/swapfiles//
-endif
+set directory=~/.vim/swapfiles//
 
 
 set background=dark
