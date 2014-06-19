@@ -112,6 +112,7 @@ autocmd! BufReadPost,BufRead,BufNew *.ipy,*.ipyw set filetype=python
 autocmd! BufReadPost,BufRead,BufNew *.ps1 set filetype=ps1
 autocmd! BufReadPre,BufRead,BufNew *.bas,*.cls,*.frm set filetype=vb
 autocmd! BufReadPre,BufRead,BufNew *.docx,*.xlsx,*.pptx set filetype=zip
+autocmd! BufReadPre,BufRead,BufNew *.drl set filetype=drools
 
 
 " vimsettings files
