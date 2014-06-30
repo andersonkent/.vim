@@ -1,4 +1,43 @@
-execute pathogen#infect()
+set nocompatible
+filetype off
+
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+let g:VundleDir = $HOME . "/.vim/bundle/Vundle.vim"
+if has("win32")
+    let g:VundleDir = $USERPROFILE . "/vimfiles/bundle/Vundle.vim"
+endif
+
+if !isdirectory(g:VundleDir)
+    echo "Vundle not detected in " . g:VundleDir . "... Downloading..."
+    execute "!git clone https://github.com/gmarik/Vundle.vim.git " . g:VundleDir
+endif
+unlet g:VundleDir
+
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" See http://www.vimawesome.com for a repository that shows you 
+" exactly what to enter for Vundle to find the plugin.  That
+" rocks!
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'mattn/calendar-vim'
+Plugin 'Rip-Rip/clang_complete'
+Plugin 'docunext/closetag.vim'
+Plugin 'msanders/cocoa.vim'
+Plugin 'matchit.zip'
+Plugin 'drools.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'taglist.vim'
+Plugin 'moria'
+Plugin 'SirVer/ultisnips'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'gregsexton/VimCalc'
+
+call vundle#end()
 
 set nocp
 set nobackup
@@ -112,6 +151,7 @@ autocmd! BufReadPost,BufRead,BufNew *.ipy,*.ipyw set filetype=python
 autocmd! BufReadPost,BufRead,BufNew *.ps1 set filetype=ps1
 autocmd! BufReadPre,BufRead,BufNew *.bas,*.cls,*.frm set filetype=vb
 autocmd! BufReadPre,BufRead,BufNew *.docx,*.xlsx,*.pptx set filetype=zip
+autocmd! BufReadPre,BufRead,BufNew *.drl set filetype=drools
 
 
 " vimsettings files
