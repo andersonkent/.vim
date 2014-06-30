@@ -1,6 +1,19 @@
 set nocompatible
 filetype off
 
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+let g:VundleDir = $HOME . "/.vim/bundle/Vundle.vim"
+if has("win32")
+    let g:VundleDir = $USERPROFILE . "/vimfiles/bundle/Vundle.vim"
+endif
+
+if !isdirectory(g:VundleDir)
+    echo "Vundle not detected in " . g:VundleDir . "... Downloading..."
+    execute "!git clone https://github.com/gmarik/Vundle.vim.git " . g:VundleDir
+endif
+unlet g:VundleDir
+
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
