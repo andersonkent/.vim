@@ -2,3 +2,6 @@
 .netrwhist
 .DS_Store
 *.pyc
+
+bundle/
+!bundle/Vundle.vim/
