@@ -13,18 +13,22 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'mattn/calendar-vim'
-Plugin 'Rip-Rip/clang_complete'
 Plugin 'docunext/closetag.vim'
 Plugin 'msanders/cocoa.vim'
 Plugin 'matchit.zip'
 Plugin 'drools.vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
 Plugin 'taglist.vim'
 Plugin 'moria'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'gregsexton/VimCalc'
+Plugin 'tpope/vim-classpath'
+Plugin 'javacomplete'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'drools.vim'
 
 call vundle#end()
 
@@ -123,17 +127,17 @@ let g:netrw_browse_split = 3
 let g:netrw_list_hide = '.*\.swp$,\.svn,\.metadata,\.DS_Store'
 
 if has("win32")
-    autocmd! Filetype html source ~/vimfiles/bundle/closetag/closetag.vim
-    autocmd! Filetype php source ~/vimfiles/bundle/closetag/closetag.vim
-    autocmd! Filetype xml source ~/vimfiles/bundle/closetag/closetag.vim
-    autocmd! Filetype javascript source ~/vimfiles/bundle/closetag/closetag.vim
-    autocmd! Filetype svg source ~/vimfiles/bundle/closetag/closetag.vim
+    autocmd! Filetype html source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
+    autocmd! Filetype php source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
+    autocmd! Filetype xml source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
+    autocmd! Filetype javascript source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
+    autocmd! Filetype svg source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
 else
-    autocmd! Filetype html source ~/.vim/bundle/closetag/closetag.vim
-    autocmd! Filetype php source ~/.vim/bundle/closetag/closetag.vim
-    autocmd! Filetype xml source ~/.vim/bundle/closetag/closetag.vim
-    autocmd! Filetype javascript source ~/.vim/bundle/closetag/closetag.vim
-    autocmd! Filetype svg source ~/.vim/bundle/closetag/closetag.vim
+    autocmd! Filetype html source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+    autocmd! Filetype php source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+    autocmd! Filetype xml source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+    autocmd! Filetype javascript source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+    autocmd! Filetype svg source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 endif
 
 autocmd! BufReadPost,BufRead,BufNew *.ipy,*.ipyw set filetype=python
