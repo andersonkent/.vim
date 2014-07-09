@@ -118,12 +118,6 @@ autocmd FileType text inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>
 
 
 
-" Directory listings
-let g:netrw_special_syntax = 1
-let g:netrw_sort_options = "i"
-let g:netrw_sort_sequence = "*"
-let g:netrw_browse_split = 3
-let g:netrw_list_hide = '.*\.swp$,\.svn,\.metadata,\.DS_Store'
 
 if has("win32")
     autocmd! Filetype html source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
@@ -244,19 +238,8 @@ endfunction
 
 
 
-let g:syntastic_python_checker_args = "-d R -d C -d W"
-
-" clang configuration
-let g:clang_complete_auto = 1
-let g:clang_use_library = 1
-let g:clang_periodic_quickfix = 0
-let g:clang_close_preview = 1
-let g:clang_snippets = 1
-let g:clang_snippets_engine = 'ultisnips'
-let g:clang_exec = '/usr/bin/clang'
-
 " syntastic configuration
+let g:syntastic_python_checker_args = "-d R -d C -d W"
 let g:syntastic_enable_signs = 1
-let g:syntastic_objc_config_file = '.clang_complete'
 let g:syntastic_objc_checker = 'clang'
 
