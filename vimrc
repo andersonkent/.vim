@@ -85,6 +85,10 @@ set diffopt=filler,iwhite
 "et foldnestmax=5
 
 
+let Tlist_Inc_WinWidth = 1
+let Tlist_Show_Menu = 1
+let Tlist_Show_One_File = 1
+let Tlist_Use_Right_Window = 1
 
 map <C-F12> :TlistToggle<CR>
 imap <C-F12> <Esc><C-F12>
