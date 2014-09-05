@@ -17,7 +17,6 @@ Plugin 'docunext/closetag.vim'
 Plugin 'msanders/cocoa.vim'
 Plugin 'matchit.zip'
 Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
 Plugin 'taglist.vim'
 Plugin 'moria'
 Plugin 'SirVer/ultisnips'
@@ -124,20 +123,11 @@ autocmd FileType text inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>
 
 
 
-
-if has("win32")
-    autocmd! Filetype html source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
-    autocmd! Filetype php source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
-    autocmd! Filetype xml source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
-    autocmd! Filetype javascript source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
-    autocmd! Filetype svg source ~/vimfiles/bundle/closetag.vim/plugin/closetag.vim
-else
-    autocmd! Filetype html source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
-    autocmd! Filetype php source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
-    autocmd! Filetype xml source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
-    autocmd! Filetype javascript source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
-    autocmd! Filetype svg source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
-endif
+autocmd! Filetype html source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+autocmd! Filetype php source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+autocmd! Filetype xml source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+autocmd! Filetype javascript source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+autocmd! Filetype svg source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
 autocmd! BufReadPost,BufRead,BufNew *.ipy,*.ipyw set filetype=python
 autocmd! BufReadPost,BufRead,BufNew *.ps1 set filetype=ps1
@@ -242,6 +232,12 @@ function! s:align()
   endif
 endfunction
 
+" netrw settings
+
+let g:netrw_browse_split = 3
+let g:netrw_hide = 1
+"let g:netrw_liststyle = 3
+let g:netrw_list_hide = "\.DS_Store"
 
 
 " syntastic configuration
