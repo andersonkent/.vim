@@ -26,8 +26,10 @@ Plugin 'tpope/vim-markdown'
 Plugin 'gregsexton/VimCalc'
 Plugin 'tpope/vim-classpath'
 Plugin 'javacomplete'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'drools.vim'
+if !has('win32')
+    Plugin 'Valloric/YouCompleteMe'
+endif
+Plugin 'nelstrom/vim-blackboard'
 
 call vundle#end()
 
@@ -53,8 +55,8 @@ set background=dark
 "colorscheme solarized
 "colorscheme kent
 "colorscheme railscasts
-colorscheme moria
-"colorscheme blackboard
+"colorscheme moria
+colorscheme blackboard
 syntax on
 
 behave mswin
