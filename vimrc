@@ -25,9 +25,6 @@ Plugin 'tpope/vim-markdown'
 Plugin 'gregsexton/VimCalc'
 Plugin 'tpope/vim-classpath'
 Plugin 'javacomplete'
-if !has('win32')
-    Plugin 'Valloric/YouCompleteMe'
-endif
 Plugin 'nelstrom/vim-blackboard'
 
 call vundle#end()
