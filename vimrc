@@ -26,6 +26,10 @@ Plugin 'gregsexton/VimCalc'
 Plugin 'tpope/vim-classpath'
 Plugin 'javacomplete'
 Plugin 'nelstrom/vim-blackboard'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimshell.vim'
+Plugin 'Shougo/neocomplete.vim'
 
 call vundle#end()
 
@@ -47,11 +51,8 @@ filetype plugin indent on
 set directory=~/.vim/swapfiles//
 
 
-set background=dark
+set background=light
 "colorscheme solarized
-"colorscheme kent
-"colorscheme railscasts
-"colorscheme moria
 colorscheme blackboard
 syntax on
 
@@ -242,3 +243,10 @@ let g:syntastic_python_checker_args = "-d R -d C -d W"
 let g:syntastic_enable_signs = 1
 let g:syntastic_objc_checker = 'clang'
 
+
+" vimshell configuration
+let g:vimshell_prompt_expr = 'escape(fnamemodify(getcwd(), ":~").">", "\\[]()?! ")." "'
+let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
+
+" NewComplete stuff
+let g:neocomplete#enable_at_startup = 1
