@@ -26,9 +26,8 @@ Plugin 'gregsexton/VimCalc'
 Plugin 'tpope/vim-classpath'
 Plugin 'javacomplete'
 Plugin 'nelstrom/vim-blackboard'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/vimshell.vim'
+"Plugin 'Shougo/vimproc.vim'
+"Plugin 'Shougo/vimshell.vim'
 "Plugin 'Shougo/neocomplete.vim'
 
 call vundle#end()
@@ -52,7 +51,7 @@ set directory=~/.vim/swapfiles//
 
 
 set background=dark
-"colorscheme blackboard
+colorscheme moria
 syntax on
 
 behave mswin
@@ -65,7 +64,6 @@ endif
 
 set wrap
 set linebreak
-set breakindent
 set backspace=eol,indent,start
 set guioptions+=b 
 set guioptions-=T
