@@ -29,7 +29,7 @@ Plugin 'nelstrom/vim-blackboard'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/vimshell.vim'
-Plugin 'Shougo/neocomplete.vim'
+"Plugin 'Shougo/neocomplete.vim'
 
 call vundle#end()
 
@@ -51,9 +51,8 @@ filetype plugin indent on
 set directory=~/.vim/swapfiles//
 
 
-set background=light
-"colorscheme solarized
-colorscheme blackboard
+set background=dark
+"colorscheme blackboard
 syntax on
 
 behave mswin
@@ -64,7 +63,9 @@ if has("gui")
     set columns=120
 endif
 
-set nowrap
+set wrap
+set linebreak
+set breakindent
 set backspace=eol,indent,start
 set guioptions+=b 
 set guioptions-=T
