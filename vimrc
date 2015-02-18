@@ -18,6 +18,7 @@ Plugin 'msanders/cocoa.vim'
 Plugin 'matchit.zip'
 Plugin 'scrooloose/syntastic'
 Plugin 'taglist.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'moria'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
@@ -26,9 +27,11 @@ Plugin 'gregsexton/VimCalc'
 Plugin 'tpope/vim-classpath'
 Plugin 'javacomplete'
 Plugin 'nelstrom/vim-blackboard'
-"Plugin 'Shougo/vimproc.vim'
-"Plugin 'Shougo/vimshell.vim'
-"Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimshell.vim'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'godlygeek/tabular'
+
 
 call vundle#end()
 
