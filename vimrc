@@ -19,18 +19,14 @@ Plugin 'matchit.zip'
 Plugin 'scrooloose/syntastic'
 Plugin 'taglist.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'moria'
 Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'gregsexton/VimCalc'
 Plugin 'tpope/vim-classpath'
 Plugin 'javacomplete'
-Plugin 'nelstrom/vim-blackboard'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/vimshell.vim'
-Plugin 'Shougo/neocomplete.vim'
 Plugin 'godlygeek/tabular'
+Plugin 'altercation/vim-colors-solarized'
 
 
 call vundle#end()
@@ -53,8 +49,8 @@ filetype plugin indent on
 set directory=~/.vim/swapfiles//
 
 
-set background=dark
-colorscheme moria
+set background=light
+colorscheme solarized
 syntax on
 
 behave mswin
