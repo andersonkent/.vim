@@ -51,9 +51,11 @@ filetype plugin indent on
 set directory=~/.vim/swapfiles//
 
 
+if has("gui")
 set background=light
 colorscheme solarized
 syntax on
+endif
 
 behave mswin
 
