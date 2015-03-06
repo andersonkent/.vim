@@ -29,6 +29,7 @@ Plugin 'javacomplete'
 Plugin 'nelstrom/vim-blackboard'
 Plugin 'godlygeek/tabular'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'DirDiff.vim'
 
 
 call vundle#end()
@@ -53,7 +54,7 @@ set directory=~/.vim/swapfiles//
 
 if has("gui")
 set background=light
-colorscheme solarized
+colorscheme blackboard
 syntax on
 endif
 
@@ -241,7 +242,7 @@ let g:netrw_list_hide = "\.DS_Store"
 
 
 " syntastic configuration
-let g:syntastic_python_checker_args = "-d R -d C -d W"
+"let g:syntastic_python_checker_args = "-d R -d C -d W"
 let g:syntastic_enable_signs = 1
 let g:syntastic_objc_checker = 'clang'
 
