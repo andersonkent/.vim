@@ -42,7 +42,9 @@ set hlsearch
 set ruler
 set number
 set cursorline
-set breakindent
+if !has('win32')
+    set breakindent
+endif
 filetype on
 filetype plugin on
 filetype plugin indent on
@@ -213,9 +215,9 @@ function! ApplyLocalSettings(dirname)
 
     " Now walk back up the path and source .vimsettings as you find them. This
     " way child directories can 'inherit' from their parents
-    let l:settingsFile = a:dirname . "/.vimsettings"
+    let l:settingsFile = a:dirname  . "/.vimsettings"
     if filereadable(l:settingsFile)
-        exec ":source " . l:settingsFile
+        exec ":source " . substitute(l:settingsFile, " ", "\\\\ ", "g")
     endif
 endfunction
 autocmd! BufEnter * call ApplyLocalSettings(expand("<afile>:p:h"))
@@ -236,8 +238,8 @@ endfunction
 " netrw settings
 
 let g:netrw_browse_split = 3
+let g:netrw_liststyle = 1
 let g:netrw_hide = 1
-"let g:netrw_liststyle = 3
 let g:netrw_list_hide = "\.DS_Store"
 
 
@@ -246,10 +248,3 @@ let g:netrw_list_hide = "\.DS_Store"
 let g:syntastic_enable_signs = 1
 let g:syntastic_objc_checker = 'clang'
 
-
-" vimshell configuration
-let g:vimshell_prompt_expr = 'escape(fnamemodify(getcwd(), ":~").">", "\\[]()?! ")." "'
-let g:vimshell_prompt_pattern = '^\%(\f\|\\.\)\+> '
-
-" NewComplete stuff
-let g:neocomplete#enable_at_startup = 1
