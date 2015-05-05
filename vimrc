@@ -29,6 +29,9 @@ Plugin 'nelstrom/vim-blackboard'
 Plugin 'godlygeek/tabular'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'DirDiff.vim'
+Plugin 'tpope/vim-dispatch'
+Plugin 'kien/ctrlp.vim'
+Plugin 'OmniSharp/omnisharp-vim'
 
 
 call vundle#end()
@@ -117,6 +120,7 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType java set completefunc=javacomplete#CompleteParamsInfo
+autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 autocmd FileType java set cin
 "autocmd FileType c set omnifunc=ccomplete#Complete
 
