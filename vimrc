@@ -36,6 +36,9 @@ Plugin 'chrisbra/csv.vim'
 
 call vundle#end()
 
+
+let mapleader=",,"
+
 set nocp
 set nobackup
 set ignorecase
@@ -87,10 +90,6 @@ set smartindent
 
 set diffopt=filler,iwhite
 
-" Set up folding
-"set foldmethod=indent
-"et foldnestmax=5
-
 
 let Tlist_Inc_WinWidth = 1
 let Tlist_Show_Menu = 1
@@ -100,12 +99,6 @@ let Tlist_Use_Right_Window = 1
 map <C-F12> :TlistToggle<CR>
 imap <C-F12> <Esc><C-F12>
 
-" Diff options
-"set diffopt=iwhite
-"hi DiffAdd      guibg=#ddffdd
-"hi DiffDelete   guibg=#ffdddd
-"hi DiffChange   guibg=#ddddff
-"hi DiffText     guibg=#9999ff 
 command! Difforig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
 " Omnicomplete
@@ -122,9 +115,7 @@ autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType java set completefunc=javacomplete#CompleteParamsInfo
 autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 autocmd FileType java set cin
-"autocmd FileType c set omnifunc=ccomplete#Complete
 
-"autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
 
 
 autocmd BufRead,BufNewFile *.txt setfiletype text
@@ -203,31 +194,39 @@ endif
 set printoptions=left:8pc,right:5pc,number:n,paper:letter,formfeed:y
 
 
+
+" Split Window navigation
+nnoremap <leader>h h
+nnoremap <leader>l l
+nnoremap <leader>k k
+nnoremap <leader>j j
+
+
 " Search for any .vimsettings files in the path to the file.
 " Source them if you find them.
-function! ApplyLocalSettings(dirname)
-    " Don't try to walk a remote directory tree -- takes too long, too many
-    " what if's
-    let l:netrwProtocol = strpart(a:dirname, 0, stridx(a:dirname, "://"))
-    if l:netrwProtocol != ""
-        return
-    endif
-
-    " Convert windows paths to unix style (they still work)
-    let l:curDir = substitute(a:dirname, "\\", "/", "g")
-    let l:parentDir = strpart(l:curDir, 0, strridx(l:curDir, "/"))
-    if isdirectory(l:parentDir)
-        call ApplyLocalSettings(l:parentDir)
-    endif
-
-    " Now walk back up the path and source .vimsettings as you find them. This
-    " way child directories can 'inherit' from their parents
-    let l:settingsFile = a:dirname  . "/.vimsettings"
-    if filereadable(l:settingsFile)
-        exec ":source " . substitute(l:settingsFile, " ", "\\\\ ", "g")
-    endif
-endfunction
-autocmd! BufEnter * call ApplyLocalSettings(expand("<afile>:p:h"))
+"function! ApplyLocalSettings(dirname)
+"    " Don't try to walk a remote directory tree -- takes too long, too many
+"    " what if's
+"    let l:netrwProtocol = strpart(a:dirname, 0, stridx(a:dirname, "://"))
+"    if l:netrwProtocol != ""
+"        return
+"    endif
+"
+"    " Convert windows paths to unix style (they still work)
+"    let l:curDir = substitute(a:dirname, "\\", "/", "g")
+"    let l:parentDir = strpart(l:curDir, 0, strridx(l:curDir, "/"))
+"    if isdirectory(l:parentDir)
+"        call ApplyLocalSettings(l:parentDir)
+"    endif
+"
+"    " Now walk back up the path and source .vimsettings as you find them. This
+"    " way child directories can 'inherit' from their parents
+"    let l:settingsFile = a:dirname  . "/.vimsettings"
+"    if filereadable(l:settingsFile)
+"        exec ":source " . substitute(l:settingsFile, " ", "\\\\ ", "g")
+"    endif
+"endfunction
+"autocmd! BufEnter * call ApplyLocalSettings(expand("<afile>:p:h"))
 
  
 " Thanks Tim Pope! (This is his Cucumber table auto-formatter)
