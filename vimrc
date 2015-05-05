@@ -32,7 +32,7 @@ Plugin 'DirDiff.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'kien/ctrlp.vim'
 Plugin 'OmniSharp/omnisharp-vim'
-
+Plugin 'chrisbra/csv.vim'
 
 call vundle#end()
 
@@ -123,6 +123,9 @@ autocmd FileType java set completefunc=javacomplete#CompleteParamsInfo
 autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 autocmd FileType java set cin
 "autocmd FileType c set omnifunc=ccomplete#Complete
+
+"autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
+
 
 autocmd BufRead,BufNewFile *.txt setfiletype text
 autocmd FileType text set wrap linebreak textwidth=0 
