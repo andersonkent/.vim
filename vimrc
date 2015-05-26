@@ -200,6 +200,7 @@ nnoremap <leader>h h
 nnoremap <leader>l l
 nnoremap <leader>k k
 nnoremap <leader>j j
+nnoremap <leader>= =
 
 
 " Search for any .vimsettings files in the path to the file.
