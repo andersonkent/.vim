@@ -27,7 +27,6 @@ Plugin 'tpope/vim-classpath'
 Plugin 'javacomplete'
 Plugin 'nelstrom/vim-blackboard'
 Plugin 'godlygeek/tabular'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'DirDiff.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'kien/ctrlp.vim'
@@ -61,18 +60,12 @@ set directory=~/.vim/swapfiles//
 
 
 if has("gui")
-set background=light
-colorscheme blackboard
+"set background=dark
+"colorscheme blackboard
 syntax on
 endif
 
 behave mswin
-
-
-if has("gui")
-    set lines=60
-    set columns=120
-endif
 
 set wrap
 set linebreak
@@ -184,10 +177,10 @@ elseif has('mac')
 endif
 
 if has('win32')
-    set guifont=consolas:h10
+    set guifont=consolas:h12
     set printfont=consolas:h9
 elseif has('mac')
-    set guifont=menlo:h11
+    set guifont=menlo:h13
     set printfont=menlo:h8
 endif
 
