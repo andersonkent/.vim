@@ -180,7 +180,7 @@ if has('win32')
     set guifont=consolas:h12
     set printfont=consolas:h9
 elseif has('mac')
-    set guifont=menlo:h13
+    set guifont=menlo:h12
     set printfont=menlo:h8
 endif
 
