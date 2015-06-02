@@ -177,7 +177,7 @@ elseif has('mac')
 endif
 
 if has('win32')
-    set guifont=consolas:h12
+    set guifont=consolas:h11
     set printfont=consolas:h9
 elseif has('mac')
     set guifont=menlo:h12
