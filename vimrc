@@ -19,7 +19,6 @@ Plugin 'matchit.zip'
 Plugin 'scrooloose/syntastic'
 Plugin 'taglist.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-markdown'
 Plugin 'gregsexton/VimCalc'
@@ -29,9 +28,18 @@ Plugin 'nelstrom/vim-blackboard'
 Plugin 'godlygeek/tabular'
 Plugin 'DirDiff.vim'
 Plugin 'tpope/vim-dispatch'
-Plugin 'kien/ctrlp.vim'
-Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'chrisbra/csv.vim'
+Plugin 'kien/ctrlp.vim'
+
+if !has("win32")
+    Plugin 'Valloric/YouCompleteMe'
+endif
+
+if has("python")
+    Plugin 'SirVer/ultisnips'
+    Plugin 'OmniSharp/omnisharp-vim'
+endif
+
 
 call vundle#end()
 
@@ -106,7 +114,6 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType java set omnifunc=javacomplete#Complete
 autocmd FileType java set completefunc=javacomplete#CompleteParamsInfo
-autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
 autocmd FileType java set cin
 
 
@@ -127,7 +134,6 @@ autocmd! BufReadPost,BufRead,BufNew *.ipy,*.ipyw set filetype=python
 autocmd! BufReadPost,BufRead,BufNew *.ps1 set filetype=ps1
 autocmd! BufReadPre,BufRead,BufNew *.bas,*.cls,*.frm set filetype=vb
 autocmd! BufReadPre,BufRead,BufNew *.docx,*.xlsx,*.pptx set filetype=zip
-autocmd! BufReadPre,BufRead,BufNew *.drl set filetype=drools
 
 
 " vimsettings files
@@ -247,4 +253,25 @@ let g:netrw_list_hide = "\.DS_Store"
 "let g:syntastic_python_checker_args = "-d R -d C -d W"
 let g:syntastic_enable_signs = 1
 let g:syntastic_objc_checker = 'clang'
+let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
 
+augroup omnisharp_commands
+autocmd!
+autocmd FileType cs setlocal omnifunc=OmniSharp#Complete
+autocmd FileType cs setlocal completeopt=longest,menuone
+autocmd BufEnter,TextChanged,InsertLeave *.cs SyntasticCheck
+autocmd BufWritePost *.cs call OmniSharp#AddToProject()
+autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
+autocmd FileType cs nnoremap gd :OmniSharpGotoDefinition<cr>
+autocmd FileType cs nnoremap <leader>fi :OmniSharpFindImplementations<cr>
+autocmd FileType cs nnoremap <leader>ft :OmniSharpFindType<cr>
+autocmd FileType cs nnoremap <leader>fs :OmniSharpFindSymbol<cr>
+autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
+autocmd FileType cs nnoremap <leader>fm :OmniSharpFindMembers<cr>
+autocmd FileType cs nnoremap <leader>x  :OmniSharpFixIssue<cr>
+autocmd FileType cs nnoremap <leader>fx :OmniSharpFixUsings<cr>
+autocmd FileType cs nnoremap <leader>tt :OmniSharpTypeLookup<cr>
+autocmd FileType cs nnoremap <leader>dc :OmniSharpDocumentation<cr>
+autocmd FileType cs nnoremap <C-K> :OmniSharpNavigateUp<cr>
+autocmd FileType cs nnoremap <C-J> :OmniSharpNavigateDown<cr>
+augroup END
