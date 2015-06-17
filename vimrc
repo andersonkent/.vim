@@ -31,9 +31,10 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'chrisbra/csv.vim'
 Plugin 'kien/ctrlp.vim'
 
-if !has("win32")
-    Plugin 'Valloric/YouCompleteMe'
-endif
+"if !has("win32")
+"    Plugin 'Valloric/YouCompleteMe'
+"    Slows things down :(
+"endif
 
 if has("python")
     Plugin 'SirVer/ultisnips'
@@ -183,7 +184,7 @@ elseif has('mac')
 endif
 
 if has('win32')
-    set guifont=consolas:h11
+    set guifont=consolas:h9
     set printfont=consolas:h9
 elseif has('mac')
     set guifont=menlo:h12
