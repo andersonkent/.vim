@@ -158,8 +158,8 @@ let java_highlight_functions = 1
 autocmd FileType sql call SetupDbcli()
 
 function! SetupDbcli()
-    map <F9> yip:newP:exec ":%!dbcli ".dbcli1GoPO:set nowrap
-    vmap <F9> :y:newP:exec ":%!dbcli ".dbcli1GoPO:set nowrap
+    map <F9> yip:newP:exec ":%!dbcli ".dbcli1GP:set nowrap
+    vmap <F9> :y:newP:exec ":%!dbcli ".dbcli1GP:set nowrap
 endfunction
 
 set tags=./tags;,tags
