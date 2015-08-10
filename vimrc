@@ -30,6 +30,10 @@ Plugin 'DirDiff.vim'
 Plugin 'tpope/vim-dispatch'
 Plugin 'chrisbra/csv.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tomasr/molokai'
+Plugin 'OrangeT/vim-csharp'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
 
 "if !has("win32")
 "    Plugin 'Valloric/YouCompleteMe'
@@ -155,11 +159,12 @@ let java_highlight_functions = 1
 
 
 " My own sql handler
-autocmd FileType sql call SetupDbcli()
+autocmd FileType sql call SetupSQL()
 
-function! SetupDbcli()
-    map <F9> yip:newP:exec ":%!dbcli ".dbcli1GoPO:set nowrap
-    vmap <F9> :y:newP:exec ":%!dbcli ".dbcli1GoPO:set nowrap
+function! SetupSQL()
+    map <F9> yip:newP:exec ":%!".g:sqlexec." ".g:sqldb1GOPO:set nowrap
+    vmap <F9> :y:newP:exec ":%!".g:sqlexec." ".g:sqldb1GOPO:set nowrap
+    echo "Please set g:sqlexec and g:sqldb"
 endfunction
 
 set tags=./tags;,tags
