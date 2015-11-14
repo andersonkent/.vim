@@ -32,13 +32,9 @@ Plugin 'chrisbra/csv.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tomasr/molokai'
 Plugin 'OrangeT/vim-csharp'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
-
-"if !has("win32")
-"    Plugin 'Valloric/YouCompleteMe'
-"    Slows things down :(
-"endif
+Plugin 'kornerstoane/taskjuggler-vim'
 
 if has("python")
     Plugin 'SirVer/ultisnips'
@@ -47,7 +43,6 @@ endif
 
 
 call vundle#end()
-
 
 let mapleader=",,"
 
@@ -260,6 +255,7 @@ let g:netrw_list_hide = "\.DS_Store"
 let g:syntastic_enable_signs = 1
 let g:syntastic_objc_checker = 'clang'
 let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
+let g:syntastic_html_tidy_ignore_errors = [ 'proprietary attribute' ]
 
 augroup omnisharp_commands
 autocmd!
